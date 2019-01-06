@@ -1,6 +1,6 @@
 FROM alpine:3.8
 
-LABEL maintainer="NGINX Docker Maintainers <docker-maint@nginx.com>"
+LABEL maintainer="Pando85 <pando855@gmail.com> (@pando85)"
 
 ENV NGINX_VERSION 1.15.8
 
