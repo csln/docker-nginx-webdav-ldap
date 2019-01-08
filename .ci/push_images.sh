@@ -2,6 +2,8 @@
 
 set -e
 
+realpath() { python -c "import os,sys; print(os.path.realpath(sys.argv[1]))" "$1"; }
+
 WORKDIR=$(dirname $(realpath $0))
 IMAGE_NAME="pando85/nginx-ldap"
 
