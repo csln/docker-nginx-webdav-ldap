@@ -14,5 +14,3 @@ install:
   - bash update.sh
 script:
   - bash .ci/commit_changes.sh
-after_success:
-  - bash .ci/push_images.sh
