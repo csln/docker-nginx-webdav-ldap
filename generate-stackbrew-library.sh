@@ -3,13 +3,17 @@ set -eu
 
 declare -A aliases
 aliases=(
-	[mainline]='1 1.15 latest'
-	[stable]='1.14'
+	[mainline]='1 1.17 latest'
+	[stable]='1.16'
 )
 
 self="$(basename "$BASH_SOURCE")"
 cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
+<<<<<<< HEAD
 base=alpine
+=======
+base=buster
+>>>>>>> docker-nginx/master
 
 versions=( */ )
 versions=( "${versions[@]%/}" )
@@ -54,7 +58,6 @@ for version in "${versions[@]}"; do
 	commit="$(dirCommit "$version/$base")"
 
 	fullVersion="$(git show "$commit":"$version/$base/Dockerfile" | awk '$1 == "ENV" && $2 == "NGINX_VERSION" { print $3; exit }')"
-	fullVersion="${fullVersion%[.-]*}"
 
 	versionAliases=( $fullVersion )
 	if [ "$version" != "$fullVersion" ]; then
@@ -69,5 +72,6 @@ for version in "${versions[@]}"; do
 		GitCommit: $commit
 		Directory: $version/$base
 	EOE
+
 
 done
