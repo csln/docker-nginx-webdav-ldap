@@ -57,12 +57,13 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
         gcc \
         libc-dev \
         make \
+        openssl-dev \
         pcre-dev \
         zlib-dev \
         linux-headers \
         curl \
         unzip \
-         openldap-dev \
+        openldap-dev \
         gnupg1 \
         libxslt-dev \
         gd-dev \
