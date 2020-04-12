@@ -9,6 +9,7 @@ get_version() {
 
 update_version() {
     sed -i -e "s/^${NGINX_VERSION_STRING}.*/${NGINX_VERSION_STRING} $1/g" $2/alpine/Dockerfile
+    sed -i -e "s/^${NGINX_VERSION_STRING}.*/${NGINX_VERSION_STRING} $1/g" $2/alpine/Dockerfile.min
 }
 
 update_version $(get_version stable) stable

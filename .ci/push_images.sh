@@ -9,7 +9,9 @@ IMAGE_NAME="pando85/nginx-ldap"
 
 build_and_push() {
     docker build . -t $1
+    docker build . -f Dockerfile.min -t $1-min
     docker push $1
+    docker push $1-min
 }
 
 create_images() {
