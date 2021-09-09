@@ -9,11 +9,7 @@ aliases=(
 
 self="$(basename "$BASH_SOURCE")"
 cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
-<<<<<<< HEAD
 base=alpine
-=======
-base=buster
->>>>>>> docker-nginx/master
 
 versions=( */ )
 versions=( "${versions[@]%/}" )
