@@ -8,9 +8,9 @@ Also include a minimal version for my own usage:
 ## Minimal version
 
 Custom NGINX Docker Image with modules:
-    - [LDAP authentication module](https://github.com/kvspb/nginx-auth-ldap).
-    - http_ssl_module
-    - http_v2_module
-    - http_stub_status_module
-    - stream
-    - http_auth_request_module
+- [LDAP authentication module](https://github.com/kvspb/nginx-auth-ldap).
+- http_ssl_module
+- http_v2_module
+- http_stub_status_module
+- stream
+- http_auth_request_module
