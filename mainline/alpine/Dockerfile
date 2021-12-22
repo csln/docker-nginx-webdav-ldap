@@ -50,6 +50,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
         --with-file-aio \
         --with-http_v2_module \
          --add-module=/tmp/src/nginx-auth-ldap-master \
+         --add-module=/tmp/src/nginx-dav-ext-module-master \
     " \
     && addgroup -S nginx \
     && adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx nginx \
@@ -72,6 +73,8 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
     && curl -fSL https://nginx.org/download/nginx-$NGINX_VERSION.tar.gz.asc  -o nginx.tar.gz.asc \
     && curl -fsSL https://github.com/kvspb/nginx-auth-ldap/archive/master.zip -o /tmp/nginx-auth-ldap-master.zip \
     && unzip -d /tmp/src /tmp/nginx-auth-ldap-master.zip \
+    && curl -fsSL https://github.com/arut/nginx-dav-ext-module/archive/master.zip -o /tmp/nginx-dav-ext-module-master.zip \
+    && unzip -d /tmp/src /tmp/nginx-dav-ext-module-master.zip \
     && export GNUPGHOME="$(mktemp -d)" \
     && found=''; \
     for server in \
